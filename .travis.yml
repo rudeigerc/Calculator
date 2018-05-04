@@ -1,8 +1,14 @@
 language: swift
+osx_image: xcode9.3
 xcode_workspace: Calculator.xcworkspace # path to your xcodeproj folder
 xcode_scheme: Calculator
+branches:
+  only:
+    - master
 before_install:
   - brew update
   - gem install cocoapods
   - pod --version
   - pod repo update
+script:
+  - xcodebuild -scheme Calculator -workspace Calculator.xcworkspace -destination 'platform=iOS Simulator,name=iPhone 6s' -sdk iphonesimulator build test
