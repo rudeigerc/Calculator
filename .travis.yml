@@ -1,0 +1,8 @@
+language: swift
+xcode_workspace: Calculator.xcworkspace # path to your xcodeproj folder
+xcode_scheme: Calculator
+before_install:
+  - brew update
+  - gem install cocoapods
+  - pod --version
+  - pod repo update
