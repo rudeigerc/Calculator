@@ -30,7 +30,7 @@ class CalculatorTests: QuickSpec {
                     button = UIButton()
                 }
                 
-                describe("when the button is a dot") {
+                context("when the button is a dot") {
                     beforeEach {
                         button.setTitle(".", for: .normal)
                         calculatorViewController.touchDigit(button)
@@ -42,7 +42,7 @@ class CalculatorTests: QuickSpec {
                     }
                 }
                 
-                describe("when the button is a digit") {
+                context("when the button is a digit") {
                     beforeEach {
                         button.setTitle("1", for: .normal)
                         calculatorViewController.touchDigit(button)
@@ -52,7 +52,7 @@ class CalculatorTests: QuickSpec {
                         expect(calculatorViewController.display.text).to(equal("1"))
                     }
                     
-                    describe("when the button is a dot") {
+                    context("when the button is a dot") {
                         beforeEach {
                             button.setTitle(".", for: .normal)
                             calculatorViewController.touchDigit(button)
@@ -63,7 +63,7 @@ class CalculatorTests: QuickSpec {
                         }
                     }
                     
-                    describe("when the button is a digit") {
+                    context("when the button is a digit") {
                         beforeEach {
                             button.setTitle("2", for: .normal)
                             calculatorViewController.touchDigit(button)
@@ -75,7 +75,7 @@ class CalculatorTests: QuickSpec {
                     }
                 }
                 
-                describe("when the button is C") {
+                context("when the button is C") {
                     beforeEach {
                         calculatorViewController.resetAll(button)
                     }

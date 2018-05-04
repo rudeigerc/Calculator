@@ -631,6 +631,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 34A61610C4E38D441E6A5CC0 /* Pods-Calculator.debug.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WA2YZKB5GB;
 				INFOPLIST_FILE = Calculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -645,6 +646,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 144E3EAE01695AAEBBBCB3E5 /* Pods-Calculator.release.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WA2YZKB5GB;
 				INFOPLIST_FILE = Calculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
