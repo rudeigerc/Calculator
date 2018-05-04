@@ -14,11 +14,4 @@ target 'Calculator' do
     pod 'Nimble'
   end
 
-  target 'CalculatorUITests' do
-    inherit! :search_paths
-    # Pods for testing
-    pod 'Quick'
-    pod 'Nimble'
-  end
-
 end
