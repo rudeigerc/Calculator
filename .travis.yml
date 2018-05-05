@@ -12,3 +12,5 @@ before_install:
   - pod repo update
 script:
   - xcodebuild -scheme Calculator -workspace Calculator.xcworkspace -destination 'platform=iOS Simulator,name=iPhone 6s' -sdk iphonesimulator build test
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
