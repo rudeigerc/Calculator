@@ -11,12 +11,8 @@ import Foundation
 extension Double {
     
     var isInt: Bool {
-        if Double(Int.max) > self, Double(Int.min) < self {
-            let intValue = Int(self)
-            return Double(intValue) == self
-        } else {
-            return false
-        }
+        let intValue = Int(self)
+        return Double(intValue) == self
     }
     
 }
