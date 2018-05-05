@@ -43,7 +43,7 @@ class CalculatorViewController: UIViewController {
             brain.performOperation(symbol: mathematicalSymbol)
         }
         displayValue = brain.result
-        brain.isPartialResult = false    // reset isPartialResult
+        brain.isPartialResult = false
     }
     
     @IBAction internal func resetAll(_ sender: UIButton) {

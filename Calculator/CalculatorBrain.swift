@@ -21,7 +21,7 @@ class CalculatorBrain {
     }
     
     internal var operations: [String: Operation] = [
-        "π": Operation.Constant(Double.pi),
+        "π": Operation.Constant(.pi),
         "e": Operation.Constant(M_E),
         "√": Operation.UnaryOperation(sqrt),
         "sin": Operation.UnaryOperation(sin),

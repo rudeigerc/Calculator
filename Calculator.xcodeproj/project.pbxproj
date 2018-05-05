@@ -142,11 +142,11 @@
 			children = (
 				9AF12ADD1DEB37B800DFA492 /* AppDelegate.swift */,
 				9AF12ADF1DEB37B800DFA492 /* CalculatorViewController.swift */,
-				9AF12AE11DEB37B800DFA492 /* Main.storyboard */,
 				9A592A431DEBF66B0009CB11 /* CalculatorBrain.swift */,
 				9AAACC65209CAAD600CA0067 /* Double+isInt.swift */,
-				9AF12AE41DEB37B800DFA492 /* Assets.xcassets */,
+				9AF12AE11DEB37B800DFA492 /* Main.storyboard */,
 				9AF12AE61DEB37B800DFA492 /* LaunchScreen.storyboard */,
+				9AF12AE41DEB37B800DFA492 /* Assets.xcassets */,
 				9AF12AE91DEB37B800DFA492 /* Info.plist */,
 			);
 			path = Calculator;
