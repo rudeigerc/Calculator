@@ -25,7 +25,7 @@ class CalculatorTests: QuickSpec {
                 _ = calculatorViewController.view
             }
             
-            describe("press a button") {
+            describe("press buttons") {
                 beforeEach {
                     button = UIButton()
                 }
@@ -288,6 +288,7 @@ class CalculatorTests: QuickSpec {
                         expect(calculatorViewController.userIsInTheMiddleOfTyping).to(equal(false))
                         expect(calculatorViewController.brain.accumulator).to(equal(0.0))
                         expect(calculatorViewController.brain.description.isEmpty).to(equal(true))
+                        expect(calculatorViewController.brain.pending).to(beNil())
                     }
                 }
                 

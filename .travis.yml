@@ -7,9 +7,6 @@ branches:
     - master
 before_install:
   - brew update
-  - gem install cocoapods
-  - pod --version
-  - pod repo update
 script:
   - xcodebuild -scheme Calculator -workspace Calculator.xcworkspace -destination 'platform=iOS Simulator,name=iPhone 6s' -sdk iphonesimulator build test
 after_success:
