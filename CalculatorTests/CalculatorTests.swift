@@ -110,81 +110,81 @@ class CalculatorTests: QuickSpec {
                                 expect(calculatorViewController.display.text).to(equal("1"))
                                 expect(calculatorViewController.userIsInTheMiddleOfTyping).to(equal(true))
                             }
-                    }
-                }
-                
-                context("when the button is a constant") {
-                    beforeEach {
-                        button.setTitle("e", for: .normal)
-                        calculatorViewController.performOperation(button)
+                        }
                     }
                     
-                    it("prints the value of e") {
-                        expect(Double(calculatorViewController.display.text!)).to(beCloseTo(M_E))
-                        expect(calculatorViewController.userIsInTheMiddleOfTyping).to(equal(false))
-                    }
-                    
-                    context("when the button is a binary operation") {
+                    context("when the button is a constant") {
                         beforeEach {
-                            button.setTitle("+", for: .normal)
+                            button.setTitle("e", for: .normal)
                             calculatorViewController.performOperation(button)
                         }
                         
-                        it("remains the same") {
+                        it("prints the value of e") {
                             expect(Double(calculatorViewController.display.text!)).to(beCloseTo(M_E))
                             expect(calculatorViewController.userIsInTheMiddleOfTyping).to(equal(false))
                         }
                         
-                        context("when the button is a constant") {
+                        context("when the button is a binary operation") {
                             beforeEach {
-                                button.setTitle("π", for: .normal)
+                                button.setTitle("+", for: .normal)
                                 calculatorViewController.performOperation(button)
                             }
                             
-                            it("prints the value of π") {
-                                expect(Double(calculatorViewController.display.text!)).to(beCloseTo(.pi))
+                            it("remains the same") {
+                                expect(Double(calculatorViewController.display.text!)).to(beCloseTo(M_E))
                                 expect(calculatorViewController.userIsInTheMiddleOfTyping).to(equal(false))
                             }
                             
-                            context("when the button is equal") {
+                            context("when the button is a constant") {
                                 beforeEach {
-                                    button.setTitle("=", for: .normal)
+                                    button.setTitle("π", for: .normal)
                                     calculatorViewController.performOperation(button)
                                 }
                                 
-                                it("prints the result of e + π") {
-                                    expect(Double(calculatorViewController.display.text!)).to(beCloseTo(.pi + M_E))
+                                it("prints the value of π") {
+                                    expect(Double(calculatorViewController.display.text!)).to(beCloseTo(.pi))
                                     expect(calculatorViewController.userIsInTheMiddleOfTyping).to(equal(false))
+                                }
+                                
+                                context("when the button is equal") {
+                                    beforeEach {
+                                        button.setTitle("=", for: .normal)
+                                        calculatorViewController.performOperation(button)
+                                    }
+                                    
+                                    it("prints the result of e + π") {
+                                        expect(Double(calculatorViewController.display.text!)).to(beCloseTo(.pi + M_E))
+                                        expect(calculatorViewController.userIsInTheMiddleOfTyping).to(equal(false))
+                                    }
                                 }
                             }
                         }
+                        
                     }
                     
-                }
-                
-                context("when the button is C") {
-                    beforeEach {
-                        button.setTitle("C", for: .normal)
-                        calculatorViewController.resetAll(button)
+                    context("when the button is C") {
+                        beforeEach {
+                            button.setTitle("C", for: .normal)
+                            calculatorViewController.resetAll(button)
+                        }
+                        
+                        it("clears all") {
+                            expect(calculatorViewController.display.text).to(equal("0"))
+                            expect(calculatorViewController.userIsInTheMiddleOfTyping).to(equal(false))
+                            expect(calculatorViewController.brain.accumulator).to(equal(0.0))
+                            expect(calculatorViewController.brain.description.isEmpty).to(equal(true))
+                        }
                     }
                     
-                    it("clears all") {
-                        expect(calculatorViewController.display.text).to(equal("0"))
-                        expect(calculatorViewController.userIsInTheMiddleOfTyping).to(equal(false))
-                        expect(calculatorViewController.brain.accumulator).to(equal(0.0))
-                        expect(calculatorViewController.brain.description.isEmpty).to(equal(true))
+                    afterEach {
+                        button = nil
                     }
                 }
                 
                 afterEach {
-                    button = nil
+                    calculatorViewController = nil
                 }
-            }
-            
-            afterEach {
-                calculatorViewController = nil
             }
         }
     }
-    
 }
